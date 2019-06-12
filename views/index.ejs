@@ -1,6 +1,8 @@
 <%- include('header')%>
   <%= Math.random() %>
-  <!-- escape the attribute -->
-  <%- content %>
+  <!-- use %- escape the attribute -->
+  <%# content is passed in from server.js %>
+  <div id="root"><% content %></div>
 <%- include('footer')%>
 
+  

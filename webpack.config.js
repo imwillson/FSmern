@@ -1,4 +1,3 @@
-const path = require('path');
 
 module.exports = {
   // bundles all the node_modules in index.js into a public 
@@ -9,7 +8,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       { 
         // babel loader runs on all js files 
         test: /\.js$/,
