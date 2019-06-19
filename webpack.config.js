@@ -8,7 +8,12 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    rules: [
+    loaders: [
+      { 
+        // json loader runs on all json files
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
       { 
         // babel loader runs on all js files 
         test: /\.js$/,

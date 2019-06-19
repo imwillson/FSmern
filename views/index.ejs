@@ -1,8 +1,10 @@
-<%- include('header')%>
-  <%= Math.random() %>
-  <!-- use %- escape the attribute -->
+<%- include('header') -%>
+  <%= Math.random() + "Index.ejs"%>
+  <%# <!-- use %- escape the attribute --> %>
   <%# content is passed in from server.js %>
-  <div id="root"><% content %></div>
-<%- include('footer')%>
+  <div id="root"><%- content -%></div>
+<%- include('footer') -%>
+
+
 
   

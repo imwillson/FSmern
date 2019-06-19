@@ -4,17 +4,21 @@
 // logStars('Function');
 
 import config from './config';
-import express from 'express';
 import apiRouter from './api'
 
+import express from 'express';
 const server = express();
+
+// set view engine to ejs! necessary!
 server.set('view engine', 'ejs');
 
 // express will automatically look at views
 server.get('/', (req,res) => {
   // res.send('hello express');
   res.render('index', {
-    content: 'Hello Express and TEST <h1>EJS</h1>!'
+    // content: 'Hello Express and TEST <h1>EJS</h1>!'
+    // blnk
+    content: ''
   });
 });
 
