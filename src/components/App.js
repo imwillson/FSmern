@@ -36,7 +36,8 @@ class App extends React.Component {
             {/* passed in from index.js */}
             {this.props.contests.map(contest => 
               <ContestPreview {...contest} />
-              )}
+            )}
+            {/* <ContestPreview {...this.props.contests[0]} /> */}
         </div>
       </div>
     )
