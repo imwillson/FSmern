@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 //components
 import Header from './Header';
+import ContestPreview from './ContestPreview';
 
 class App extends React.Component {
   // const App = () => {
@@ -32,7 +33,10 @@ class App extends React.Component {
       <div className="App">
         <Header message={this.state.pageHeader} />
         <div>
-            {this.state.test}
+            {/* passed in from index.js */}
+            {this.props.contests.map(contest => 
+              <ContestPreview {...contest} />
+              )}
         </div>
       </div>
     )

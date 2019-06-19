@@ -4,12 +4,13 @@ import PropTypes from 'prop-types'
 
 // uses json-loader to read it
 import data from './testData';
-console.log(data);
-import App from "./components/App"
+// console.log(data);
+import App from "./components/App";
 
+// console.log(...data.contests[0])
 
 ReactDOM.render(
-  <App contest={data.contests} />, 
+  <App contests={data.contests} />, 
   document.getElementById('root')
 );
 

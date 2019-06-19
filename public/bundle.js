@@ -61,22 +61,20 @@
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _testData = __webpack_require__(/*! ./testData */ 25);
+	var _testData = __webpack_require__(/*! ./testData */ 23);
 	
 	var _testData2 = _interopRequireDefault(_testData);
 	
-	var _App = __webpack_require__(/*! ./components/App */ 23);
+	var _App = __webpack_require__(/*! ./components/App */ 24);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	console.log(_testData2.default);
+	// console.log(...data.contests[0])
 	
 	// uses json-loader to read it
-	
-	
-	_reactDom2.default.render(_react2.default.createElement(_App2.default, { contest: _testData2.default.contests }), document.getElementById('root'));
+	_reactDom2.default.render(_react2.default.createElement(_App2.default, { contests: _testData2.default.contests }), document.getElementById('root'));
 	
 	// // taking the component out
 	// setTimeout(() => {
@@ -95,6 +93,8 @@
 	//   </h2>, 
 	//   document.getElementById('root')
 	// );
+	
+	// console.log(data);
 
 /***/ },
 /* 1 */
@@ -11313,6 +11313,15 @@
 
 /***/ },
 /* 23 */
+/*!***************************!*\
+  !*** ./src/testData.json ***!
+  \***************************/
+/***/ function(module, exports) {
+
+	module.exports = {"contests":[{"id":1,"categoryName":"Business/Company","contestName":"Cognitive Building Bricks"},{"id":2,"categoryName":"Magazine/Newsletter","contestName":"Educating people about sustainable food production"},{"id":3,"categoryName":"Software Component","contestName":"Big Data Analytics for Cash Circulation"},{"id":4,"categoryName":"Website","contestName":"Free programming books"}]}
+
+/***/ },
+/* 24 */
 /*!*******************************!*\
   !*** ./src/components/App.js ***!
   \*******************************/
@@ -11334,9 +11343,13 @@
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _Header = __webpack_require__(/*! ./Header */ 24);
+	var _Header = __webpack_require__(/*! ./Header */ 25);
 	
 	var _Header2 = _interopRequireDefault(_Header);
+	
+	var _ContestPreview = __webpack_require__(/*! ./ContestPreview */ 26);
+	
+	var _ContestPreview2 = _interopRequireDefault(_ContestPreview);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -11397,7 +11410,9 @@
 	        _react2.default.createElement(
 	          'div',
 	          null,
-	          this.state.test
+	          this.props.contests.map(function (contest) {
+	            return _react2.default.createElement(_ContestPreview2.default, contest);
+	          })
 	        )
 	      );
 	    }
@@ -11412,7 +11427,7 @@
 	exports.default = App;
 
 /***/ },
-/* 24 */
+/* 25 */
 /*!**********************************!*\
   !*** ./src/components/Header.js ***!
   \**********************************/
@@ -11451,13 +11466,47 @@
 	exports.default = Header;
 
 /***/ },
-/* 25 */
-/*!***************************!*\
-  !*** ./src/testData.json ***!
-  \***************************/
-/***/ function(module, exports) {
+/* 26 */
+/*!******************************************!*\
+  !*** ./src/components/ContestPreview.js ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = {"contests":[{"id":1,"categoryName":"Business/Company","contestName":"Cognitive Building Bricks"},{"id":2,"categoryName":"Magazine/Newsletter","contestName":"Educating people about sustainable food production"},{"id":3,"categoryName":"Software Component","contestName":"Big Data Analytics for Cash Circulation"},{"id":4,"categoryName":"Website","contestName":"Free programming books"}]}
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _propTypes = __webpack_require__(/*! prop-types */ 17);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ContestPreview = function ContestPreview(contest) {
+	  // console.log(contest);
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'ContextPreview' },
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      contest.categoryName
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      contest.contestName
+	    )
+	  );
+	};
+	
+	exports.default = ContestPreview;
 
 /***/ }
 /******/ ]);
